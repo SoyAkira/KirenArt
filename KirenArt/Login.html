@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KirenArt - Login</title>
+    <link rel="shortcut icon" href="img/Cathub500extra.png" >
+    <link rel="stylesheet" href="Login.css">
+    <script src="https://kit.fontawesome.com/bda39a00ae.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- CONTENEDOR DEL VIDEO DE FONDO PARA TODA LA PÁGINA -->
+    <div class="page-video-background">
+        <video autoplay muted loop playsinline class="bg-video">
+            <source src="video/58193-487176852.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+<!-- Botón para volver a abrir el modal si el usuario lo cierra -->
+    <button class="open-modal-btn" id="openModal">Login</button>
+
+    <!-- Overlay y Contenedor del Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-container">
+            
+            <!-- Botón de Cerrar Modal -->
+            <button class="close-btn" id="closeModal">&times;</button>
+
+            <!-- LADO IZQUIERDO (Con Video de Fondo Automático) -->
+            <div class="modal-left">
+                <!-- Video en bucle automático (cambia 'tu-video.mp4' por tu archivo real) -->
+                <video class="bg-video" autoplay muted loop playsinline>
+                    <source src="video/58193-487176852.mp4" type="video/mp4">
+                </video>
+
+                <!-- Capa oscura para resaltar el texto -->
+                <div class="video-overlay"></div>
+
+                <div class="brand-logo">
+                    <img src="img/Cathub500extra.png" alt="KirenArtLogo">
+                    <p>KirenArt</p>
+                </div>
+
+                <div class="left-content">
+                    <h1>Join the world's largest artistic community</h1>
+                    <p>Explore and discover art, become a better artist, meet people with shared interests, buy and sell artwork, or find your dream job. You can do all of this with us.</p>
+                </div>
+
+                <div class="left-footer">
+                    <span>SoyAkira - Ivan Alejandro Pacheco Rojas</span>
+                </div>
+            </div>
+
+            <!-- LADO DERECHO (Formulario) -->
+            <div class="modal-right">
+                <h2>Login</h2>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" placeholder="SoyAkiraxD, Pablito777..." id="username" required>
+                    </div>
+
+                    <div class="form-extras">
+                        <label class="remember-me">
+                            <input type="checkbox"> Stay Connected
+                        </label>
+                        <a href="#">Did you forget your username or password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Next</button>
+
+                    <div class="divider">or</div>
+
+                    <!-- Botones Sociales -->
+                    <button type="button" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.22 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.12 0 9.82 0 12s.43 3.88 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+                        Continue with Google
+                    </button>
+
+                    <button type="button" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path fill="currentColor" d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.83 5.23c.64-.78 1.07-1.86.95-2.94-1.01.04-2.23.68-2.92 1.46-.6.68-1.12 1.78-.98 2.84 1.13.09 2.31-.56 2.95-1.36z"/></svg>
+                        Continue with Apple
+                    </button>
+
+                    <button type="button" class="social-btn">
+                        <svg viewBox="0 0 24 24"><path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Continue with Facebook
+                    </button>
+
+                    <div class="register-prompt">
+                        Sign up for KirenArt <a href="#">Join KirenArt</a>
+                    </div>
+
+                    <div class="legal-footer">
+                        By logging in, I agree to KirenArt's <a href="#">Terms of Service</a> and confirm that I have read the <a href="#">Privacy Policy.</a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="Login.js"></script>
+</body>
+</html>

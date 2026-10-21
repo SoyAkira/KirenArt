@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(34, 34, 34);
+}
+.nav-sidebar{ /*sidebar*/
+    color: white;
+    position: fixed;
+    background-color: rgb(34, 34, 34);
+    width: 4rem;
+    height: 100%;
+    padding: 10px 6px;
+    border-right: solid 0.5px rgb(99, 99, 99);
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+.nav-sidebar:hover{
+    width: 18rem;
+}
+.sidebar{ /*sidebar-header*/
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar > img{
+    width: 50px;
+    border-radius: 50%;
+}
+.sidebar > h1{
+    font-size: 1.75rem;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.menu-separator{
+    width: 100%;
+    position: absolute;
+    background-color: aliceblue;
+    height: 1px;
+    transform: scaleX(1);
+    transform: translateY(-50%);
+    transform-origin: right;
+    transition-duration: 0.2s;
+    top: 50%;
+    opacity: 20%;
+    border-radius: 50%;
+}
+.nav-sidebar:hover .sidebar-explore .menu-separator{
+    transform: scaleX(0);
+}
+.sidebar-explore{
+    margin-top: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.sidebar-explore h4 span{
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+.nav-sidebar:hover .sidebar-explore h4 span{
+    opacity: 1;
+}
+.sidebar-explore li a{ /*sidebar-links*/
+    color: rgb(196, 196, 196);
+    font-family: "Lexend", sans-serif;
+    gap: 0 20px;
+    padding: 12px 16px;
+    text-decoration: none;
+    white-space: nowrap;
+    display: flex;
+    transition: 0.2s ease-in-out;
+    align-items: center;
+    font-size: 16px;
+}
+.sidebar-explore > h4{ 
+    color: white;
+    font-family: "Lexend", sans-serif;
+    margin: 10px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.sidebar-explore li a:hover{
+    background: rgb(80, 80, 80);
+    color: white;
+    border-radius: 15px;
+}
+
+/*header*/
+
+.header-menu{
+    width: calc(100% - 4rem);
+    height: 4rem;
+    margin-left: 4rem;
+    display: flex;
+    border-bottom: solid 0.5px rgb(99, 99, 99);
+}
+
+
+/*Shadow*/
+
+/* Estilos de la capa oscura de fondo */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Oscurece la pantalla un 60% */
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+    z-index: 99; /* Debajo del sidebar (100) pero encima de todo lo demás */
+    pointer-events: none; /* Evita que bloquee clics cuando está cerrado */
+}
+
+/* EFECTO: Muestra la capa oscura al hacer hover en el sidebar */
+.nav-sidebar:hover ~ .sidebar-overlay {
+    visibility: visible;
+    opacity: 0.8;
+}

@@ -1,0 +1,566 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(17, 17, 17);
+}
+.header-AI{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    position: fixed;
+    z-index: 90;
+    justify-content: space-between;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-bottom: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+}
+.header-AI img{
+    width: 110px;
+    height: 60px;
+    box-shadow: #8502b9;
+    cursor: pointer;
+}
+.floating-cat{
+    animation: floatUpDown 3s ease-in-out infinite;
+    display: inline-block;
+}
+@keyframes floatUpDown {
+    0% {
+        /* Comienza en su posición original (0px arriba) */
+        transform: translateY(0px);
+        filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.2));
+    }
+    50% {
+        /* A mitad de camino (50%), sube 10 píxeles */
+        transform: translateY(-10px);
+        filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.8));
+    }
+    100% {
+        /* Vuelve a la posición original (0px) */
+        transform: translateY(0px);
+        filter: drop-shadow(0 0 2px rgba(168, 85, 247, 0.2));
+    }
+}
+.header-buttons{
+    display: flex;
+    gap: 30px;
+}
+.header-buttons button{
+    width: 6.5rem;
+    height: 3rem;
+    border: solid;
+    border-radius: 13px;
+    font-size: 14px;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 700;
+}
+a .blackCat {
+    background-color: transparent;
+    color: #bdbdbd;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease-in-out;
+}
+a .blackCat:hover{
+    background-color: rgb(54, 54, 54);
+}
+a .WhiteCat{
+    background-color: #ffffff;
+    color: #000000;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s ease-in-out;
+    margin-right: 30px;
+}
+a .WhiteCat:hover{
+    background-color: rgb(54, 54, 54);
+}
+
+
+
+/* Contenedor principal de la presentación */
+.presentation-AI {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 11rem 20px 80px 20px;
+    color: #ffffff;
+    font-family: "Lexend", sans-serif;
+    overflow: hidden;
+}
+.presentation-AI::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; /* Lo ubicamos justo en la parte baja */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;    /* Ancho del resplandor */
+    height: 120px;
+
+    background: radial-gradient(ellipse at center, rgb(199, 108, 218) 0%, rgba(199, 108, 218, 1) 60%, transparent 100%);
+
+    filter: blur(90px);
+    z-index: 1;
+    pointer-events: none;
+}
+/* Estilo de la etiqueta superior (Píldora de Discord + Texto) */
+.badge-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.badge-container a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    transition: 0.3s ease-in-out;
+}
+.badge-container a:hover{
+    color: #f5dc96;
+}
+
+.badge-container span {
+    color: #8a8a8a;
+}
+
+/* Estilo del Título Principal (H2) */
+.presentation-AI h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    color: #f1f1f1;
+    background: linear-gradient(135deg, #ffffff 40%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+/* Estilo para la letra 'C' en cursiva que le da el toque elegante */
+.presentation-AI h2 span {
+    font-size: 60px;
+    font-family: "Lobster", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+/* Estilo del párrafo descriptivo */
+.presentation-AI .description {
+    color: #9a9a9a;
+    font-size: 1rem;
+    max-width: 700px;
+    line-height: 1.6;
+}
+.presentation-AI .tokens-MadKiraAI{
+    background: linear-gradient(135deg, #ffffff 40%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+
+
+.carrucel-images {
+    width: 100%;
+    overflow: hidden;
+    padding: 0px 0 40px 0;
+    position: relative;
+    /* Desvanece los bordes laterales de forma elegante */
+    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.gallery-container {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    cursor: grab;
+    user-select: none;
+    will-change: transform; /* Optimiza el movimiento en el navegador */
+}
+
+.gallery-container:active {
+    cursor: grabbing;
+}
+
+.gallery-item {
+    width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+    pointer-events: none; /* Evita que se arrastren las imágenes de forma nativa */
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+
+
+.Create-Art{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 11rem 20px 80px 20px;
+    color: #ffffff;
+    font-family: "Lexend", sans-serif;
+    overflow: hidden;
+}
+.Create-content h2{
+    font-size: 50px;
+    
+}
+.Create-content p{
+    font-size: 15px;
+    color: #aaaaaa;
+}
+.Create-presentation{
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Create-presentation button {
+    width: 140px;
+    height: 50px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    font-family: "Josefin Sans", sans-serif;
+    cursor: pointer;
+    color: white;
+    position: relative;
+    box-shadow: 0 0 5px rgb(214, 53, 214),
+    0 0 25px rgb(151, 41, 214);
+    transition: 0.2s ease-in-out;
+}
+.Create-presentation button:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px rgb(104, 21, 172), 0 0 200px red;
+}
+
+
+
+
+.Examples-proyects {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    padding: 10rem 40px 8rem 40px;
+}
+
+.video-card {
+    width: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    background-color: #1a1a1a;
+    position: relative;
+    border: solid 1px rgb(77, 77, 77);
+}
+.video-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(43, 42, 42, 0.8) 0%, rgba(34, 34, 34, 0.2) 50%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 16px;
+}
+.video-overlay-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 2; /* Se coloca por encima del video y del degradado */
+    color: #ffffff;
+    font-family: "Lexend", sans-serif;
+    box-sizing: border-box;
+}
+.video-overlay-content h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.video-overlay-content p {
+    font-size: 0.8rem;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+.hover-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none; 
+}
+
+
+
+.steps-controls-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 80px 40px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Lexend", sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-top: solid 1px gray;
+}
+
+/* Columna Izquierda: Textos y Pasos */
+.steps-info-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.steps-header h4 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+
+    background: linear-gradient(135deg, #ffffff 40%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 
+    0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+.steps-header p {
+    color: #9ca3af;
+    margin-bottom: 12px;
+}
+
+.steps-header a {
+    color: #c084fc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.steps-header a:hover {
+    color: #fc84fc;
+    text-decoration: underline;
+}
+
+/* Lista de Pasos Interactivos */
+.steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+    padding-left: 20px;
+}
+
+.step-item {
+    cursor: pointer;
+    opacity: 0.4;
+    transition: all 0.3s ease;
+}
+
+.step-item:hover {
+    opacity: 0.8;
+}
+
+.step-item.active {
+    opacity: 1;
+    border-left: 2px solid #a855f7;
+    margin-left: -22px;
+    padding-left: 20px;
+}
+
+.step-item h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #ffffff;
+}
+
+.step-item p {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Columna Derecha: Tarjeta Visual con Brillo Morado/Rosado */
+.KirenArt3D-Example {
+    flex: 1.2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* Iluminación de fondo ambiental (Neón) */
+.KirenArt3D-Example::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, rgba(236, 72, 153, 0.15) 50%, transparent 70%);
+    filter: blur(40px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.image-preview-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 380px;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+/* Comportamiento de las imágenes para que se alternen con fundido */
+.preview-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: scale(1.03);
+}
+
+.preview-img.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+.FAQS-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    background-color: transparent;
+    color: #ffffff;
+    font-family: "Lexend", sans-serif;
+    box-sizing: border-box;
+}
+
+.faqs-main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Cada elemento de la lista cuenta con una línea divisoria arriba */
+.faq-item {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.faq-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Botón de la pregunta */
+.faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: left;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+    color: #a855f7;
+}
+
+/* Icono de la cruz (+) con estilo morado */
+.faq-icon {
+    font-size: 1.8rem;
+    color: #a855f7;
+    font-weight: 300;
+    transition: transform 0.4s ease;
+    line-height: 1;
+}
+
+/* Contenedor de la respuesta con animación de despliegue suave */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 0;
+}
+
+.faq-answer p {
+    color: #9ca3af;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.faq-answer a {
+    color: #a855f7;
+    text-decoration: none;
+}
+
+.faq-answer a:hover {
+    text-decoration: underline;
+}
+
+/* Estados activos cuando se despliega la pregunta */
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Se ajusta dinámicamente al contenido */
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg); /* Gira la cruz para convertirla en 'X' al abrir */
+}
